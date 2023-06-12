@@ -1,4 +1,4 @@
-// Definir los productos disponibles
+
 const productos = [
   { nombre: 'remera', precio: 10 },
   { nombre: 'camisa', precio: 15 },
@@ -7,14 +7,14 @@ const productos = [
 ];
 let carrito = []
 
-let seleccion = prompt('Bienveido a ecomermer ¿desea realizar compras?')
+let seleccion = prompt('Bienvenido a nuestro ecomermer ¿desea realizar compras?')
 
 while(seleccion != 'si' && seleccion !='no'){
   alert("ingrese si o no")
-  seleccion = prompt("hola desea relizar un compra si o no") 
+  seleccion = prompt('hola desea relizar un compra si o no') 
 }
 if (seleccion =="si"){
-  alert("lista de productos")
+  alert('Lista de productos')
   let todoslosproductos = productos.map(
     (producto) => producto.nombre + " " + producto.precio + "$");
     alert(todoslosproductos.join('\n'))
@@ -25,7 +25,7 @@ if (seleccion =="si"){
  }
 
  while (seleccion != 'no'){
-  let producto = prompt('Agrega un producto')
+  let producto = prompt('Escriba nombre del producto')
    let precio = 0
 
    if (producto == 'remera' || producto == 'camisa' || producto == 'pantalon' || producto == 'short'){
@@ -46,14 +46,14 @@ if (seleccion =="si"){
        break;     
   }
   
-  let unidades = parseInt(prompt('cuantas unidades desea llevar'))
+  let unidades = parseInt(prompt('¿Cuantas unidades desea llevar?'))
   carrito.push({producto, unidades, precio})
   } else {
-    alert('no tenemos')
+    alert('No tenemos')
   }
   seleccion = prompt('desea seguir comprando')
   while(seleccion == 'no'){
-    alert('gracias por su compra')
+    alert('Gracias por su compra')
     carrito.forEach((carritofinal )=> {
       console.log(`producto: ${carritofinal.producto}, unidades: ${carritofinal.unidades}, total a pagar: ${carritofinal.unidades * carritofinal.precio}`)
     })
